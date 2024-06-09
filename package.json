@@ -1,0 +1,11 @@
+{
+  "name": "diamond-duel",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "docker:dev": "docker compose -f docker-compose.yml up --build"
+  }
+}

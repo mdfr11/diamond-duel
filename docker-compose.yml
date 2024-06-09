@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - diamondduel-net
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - diamondduel-net
+    environment:
+      - NODE_ENV=development
+
+networks:
+  diamondduel-net:
+    driver: bridge
